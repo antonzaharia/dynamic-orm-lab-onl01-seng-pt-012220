@@ -17,6 +17,9 @@ class InteractiveRecord
     column_names.compact
   end
   
+  def initialize(options={})
+    column_names.each do |
+  end
 
   
   
