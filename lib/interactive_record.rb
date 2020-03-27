@@ -52,7 +52,11 @@ class InteractiveRecord
   end
   
   def self.find_by(attribute)
-    sql = "SELECT * FROM #{self.table_name} VALUES #{attribute.keys[0].to_s = attribute.values[0].to_s} "
+    sql = <<-SQL
+    "SELECT * FROM #{self.table_name}
+    VALUES #{attribute.keys[0].to_s = 'attribute.values[0].to_s'} "
+    SQL
+    DB[:conn].execute(sql, attribute)
   end
   
   
