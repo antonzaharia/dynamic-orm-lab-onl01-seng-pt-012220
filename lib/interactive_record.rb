@@ -52,7 +52,7 @@ class InteractiveRecord
   end
   
   def self.find_by(attribute)
-    sql = "SELECT * FROM #{table_name_for_insert} "
+    sql = "SELECT * FROM #{self.table_name} "
   end
   
   
